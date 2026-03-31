@@ -8,12 +8,19 @@
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
-	"supports": {
-		"html": false
+	"attributes": {
+		"startingYear": {
+			"type": "string",
+			"default": 2000
+		}
 	},
+	"supports": {
+		"html": true,
+		"align": true
+	},
+	"render": "file:./render.php",
 	"textdomain": "copyright-date-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"style": "file:./style-index.css"
 }

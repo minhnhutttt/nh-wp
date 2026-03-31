@@ -15,10 +15,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save( props ) {
+	const { startingYear } = props.attributes;
+
 	return (
 		<p { ...useBlockProps.save() }>
-			{ 'Copyright Date Block – hello from the saved content!' }
+			{ 'Copyright Date Block – hello from the saved content!' } {startingYear}
 		</p>
 	);
 }

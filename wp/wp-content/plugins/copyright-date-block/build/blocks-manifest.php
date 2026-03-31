@@ -13,13 +13,20 @@ return array(
 		'example' => array(
 			
 		),
-		'supports' => array(
-			'html' => false
+		'attributes' => array(
+			'startingYear' => array(
+				'type' => 'string',
+				'default' => 2000
+			)
 		),
+		'supports' => array(
+			'html' => true,
+			'align' => true
+		),
+		'render' => 'file:./render.php',
 		'textdomain' => 'copyright-date-block',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	)
 );

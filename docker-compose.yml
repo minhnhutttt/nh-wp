@@ -32,7 +32,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootsecurepassword}
     volumes:
       - db_data:/var/lib/mysql
-      - ./backups/backup.sql:/docker-entrypoint-initdb.d/init.sql
+       - ./backups/backup.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - wp-network
 

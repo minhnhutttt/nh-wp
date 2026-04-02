@@ -37,7 +37,8 @@ function submitBook() {
         method: 'POST',
         data: {
             title: title,
-            content: content
+            content: content,
+            status: 'publish',
         },
     } ).then( ( result ) => {
         alert( 'Book saved!' );

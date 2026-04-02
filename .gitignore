@@ -1,0 +1,6 @@
+# Ignore toàn bộ thư mục wp/
+/wp/*
+
+# Nhưng vẫn track wp-content
+!/wp/wp-content/
+

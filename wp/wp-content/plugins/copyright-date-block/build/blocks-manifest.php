@@ -14,14 +14,25 @@ return array(
 			
 		),
 		'attributes' => array(
+			'showStartingYear' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
 			'startingYear' => array(
 				'type' => 'string',
 				'default' => 2000
 			)
 		),
 		'supports' => array(
+			'color' => array(
+				'background' => true,
+				'text' => true
+			),
 			'html' => true,
-			'align' => true
+			'align' => true,
+			'typography' => array(
+				'fontSize' => true
+			)
 		),
 		'render' => 'file:./render.php',
 		'textdomain' => 'copyright-date-block',

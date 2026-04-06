@@ -21,6 +21,7 @@ import { PanelBody, TextControl } from '@wordpress/components';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import { ToggleControl } from '@wordpress/components';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -31,27 +32,41 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit( props ) {
-	const { startingYear } = props.attributes;
+	const { startingYear, showStartingYear } = props.attributes;
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title="Setting">
 					<TextControl
+						__next40pxDefaultSize
 						label="Starting Year"
 						value={ startingYear }
 						onChange={ ( value ) =>
 							props.setAttributes( { startingYear: value } )
 						}
 					/>
+					<ToggleControl
+						label="Show Starting Year"
+						checked={ showStartingYear }
+						onChange={ () => props.setAttributes( { showStartingYear: ! showStartingYear } ) }
+						/>
 				</PanelBody>
 			</InspectorControls>
-			<p { ...useBlockProps() }>
-				{ __(
-					'Copyright Date Block – hello from the editor!',
-					'copyright-date-block'
-				) } {startingYear}
-			</p>
+			{
+				showStartingYear ? (
+					<p { ...useBlockProps() }>
+					{ __(
+						'Copyright Date Block – hello from the editor!',
+						'copyright-date-block'
+					) } {startingYear}
+				</p>
+				)
+				: (
+					<p>None</p>
+				)
+			}
+
 		</>
 	);
 }
